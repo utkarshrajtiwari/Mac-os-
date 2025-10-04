@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  overflow: hidden;
+  height: 100vh;
+
+  /* Mac os ventura wallpaper gradient */
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+/* 
+==================================================
+Boot / Loading screen
+==================================================
+*/
+
+.boot-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.boot-screen.hidden {
+  opacity: 0;
+  pointer-events: none; /* click nahi hoga
+   */
+}
+
+.boot-logo {
+  margin-bottom: 30px;
+  animation: pulse 2s ease-in-out infinite; /* continuous animation */
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* progress bar background */
+.boot-progress-bar {
+  width: 200px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.2); /* Halka white background */
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.boot-progress-fill {
+  height: 100%;
+  background-color: white;
+  width: 0;
+  animation: loading 5s ease-out forwards;
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Brightness overlay for entire screen */
+.brightness-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transition: opacity 0.1s ease;
+}
+
+/* 
+========================================
+      MENU BAR - Top bar like macOS
+======================================== 
+*/
+
+.menu-bar {
+  position: fixed; /* Screen ke top pe fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 26px;
+  background: rgba(30, 30, 30, 0.8); /* Dark semi-transparent */
+  backdrop-filter: blur(20px);
+  color: white;
+  font-size: 13px;
+  display: flex; /* Left aur right ko arrange karne ke liye */
+  justify-content: space-between; /* Left extreme left, right extreme right */
+  align-items: center; /* Vertically center */
+  padding: 0 12px;
+  z-index: 9999; /* Sabse upar dikhega */
+}
+
+/* Menu Left & Right Sections */
+.menu-left,
+.menu-right {
+  display: flex;
+  gap: 4px;
+}
+
+.menu-item,
+.menu-icon,
+.apple-logo,
+.control-center {
+  padding: 0 10px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-item:hover,
+.menu-icon:hover,
+.apple-logo:hover,
+.control-center:hover {
+  background: rgba(255, 255, 255, 0.1); /* Halka white overlay */
+}
+
+/* Active menu item (bold text) */
+.menu-item.active {
+  font-weight: 600;
+}
+
+/* Brightness Popup */
+.brightness-popup {
+  position: fixed;
+  top: 32px;
+  right: 80px;
+  background: rgba(50, 50, 52, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  padding: 20px;
+  display: none; /* Default hidden */
+  z-index: 10000;
+}
+
+.brightness-popup.active {
+  display: block; /* 'active' class se visible */
+}
+
+.brightness-slider {
+  width: 200px;
+  height: 4px;
+  -webkit-appearance: none; /* Default style remove */
+  background: #555;
+  border-radius: 5px;
+}
+
+/* Slider Thumb (Handle) */
+.brightness-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Brightness overlay - poori screen pe */
+.brightness-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0; /* default transparent */
+  pointer-events: none; /* Clicks pass through */
+  z-index: 9998; /* Menu bar ke neeche */
+  transition: opacity 0.1s ease;
+}
