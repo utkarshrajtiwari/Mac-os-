@@ -158,7 +158,395 @@
       </div>
     </div>
 
-    
+    <!-- Dock container -->
+    <!-- Dock -->
+    <div class="dock">
+      <!-- Finder Icon - Exact macOS Design -->
+      <div class="dock-item" data-app="finder">
+        <svg class="dock-icon" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="finderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: #4a9efe" />
+              <stop offset="100%" style="stop-color: #1d7ce5" />
+            </linearGradient>
+          </defs>
+          <rect width="120" height="120" rx="26" fill="url(#finderGrad)" />
+          <!-- Finder Face -->
+          <circle cx="48" cy="52" r="6" fill="#0D3B66" />
+          <circle cx="72" cy="52" r="6" fill="#0D3B66" />
+          <path
+            d="M35 70 Q60 90 85 70"
+            stroke="#0D3B66"
+            stroke-width="5"
+            fill="none"
+            stroke-linecap="round"
+          />
+        </svg>
+        <span class="dock-label">Finder</span>
+      </div>
+
+      <!-- Safari Icon - Exact macOS Design -->
+      <div class="dock-item" data-app="safari">
+        <svg class="dock-icon" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="safariGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color: #58d3ff" />
+              <stop offset="100%" style="stop-color: #0a84ff" />
+            </linearGradient>
+            <radialGradient id="safariCenter">
+              <stop offset="0%" style="stop-color: #fff" />
+              <stop offset="100%" style="stop-color: #ddd" />
+            </radialGradient>
+          </defs>
+          <rect width="120" height="120" rx="26" fill="url(#safariGrad)" />
+          <circle
+            cx="60"
+            cy="60"
+            r="42"
+            fill="none"
+            stroke="white"
+            stroke-width="3"
+          />
+          <!-- Compass Needle -->
+          <g transform="rotate(-45 60 60)">
+            <path d="M60 25 L65 55 L60 60 L55 55 Z" fill="#FF3B30" />
+            <path d="M60 95 L55 65 L60 60 L65 65 Z" fill="url(#safariCenter)" />
+          </g>
+          <!-- Center dot -->
+          <circle cx="60" cy="60" r="5" fill="white" />
+        </svg>
+        <span class="dock-label">Safari</span>
+      </div>
+
+      <!-- Messages Icon - Exact macOS Design -->
+      <div class="dock-item" data-app="messages">
+        <svg class="dock-icon" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="messagesGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: #5dfc8e" />
+              <stop offset="100%" style="stop-color: #00d856" />
+            </linearGradient>
+          </defs>
+          <rect width="120" height="120" rx="26" fill="url(#messagesGrad)" />
+          <!-- Message Bubble -->
+          <path
+            d="M30 40 Q30 30 40 30 L80 30 Q90 30 90 40 L90 65 Q90 75 80 75 L50 75 L35 88 L35 75 Q30 75 30 65 Z"
+            fill="white"
+          />
+        </svg>
+        <span class="dock-label">Messages</span>
+      </div>
+
+      <!-- Mail Icon - Exact macOS Design -->
+      <div class="dock-item" data-app="mail">
+        <svg class="dock-icon" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="mailGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: #4a9efe" />
+              <stop offset="100%" style="stop-color: #2d7fe5" />
+            </linearGradient>
+          </defs>
+          <rect width="120" height="120" rx="26" fill="url(#mailGrad)" />
+          <!-- Envelope -->
+          <rect x="20" y="35" width="80" height="50" rx="4" fill="white" />
+          <path
+            d="M20 35 L60 65 L100 35"
+            stroke="url(#mailGrad)"
+            stroke-width="3"
+            fill="none"
+          />
+        </svg>
+        <span class="dock-label">Mail</span>
+      </div>
+
+      <div class="dock-separator"></div>
+
+      <!-- Notes Icon - Exact macOS Design -->
+      <div class="dock-item" data-app="notes">
+        <svg class="dock-icon" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="notesGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: #ffe96e" />
+              <stop offset="100%" style="stop-color: #ffcc33" />
+            </linearGradient>
+          </defs>
+          <rect width="120" height="120" rx="26" fill="url(#notesGrad)" />
+          <!-- Top colored strip -->
+          <rect width="120" height="22" fill="#FFAA00" opacity="0.4" />
+          <!-- Lines -->
+          <line
+            x1="25"
+            y1="45"
+            x2="95"
+            y2="45"
+            stroke="#FFAA00"
+            stroke-width="2.5"
+          />
+          <line
+            x1="25"
+            y1="60"
+            x2="80"
+            y2="60"
+            stroke="#FFAA00"
+            stroke-width="2.5"
+          />
+          <line
+            x1="25"
+            y1="75"
+            x2="90"
+            y2="75"
+            stroke="#FFAA00"
+            stroke-width="2.5"
+          />
+        </svg>
+        <span class="dock-label">Notes</span>
+      </div>
+
+      <!-- Calendar Icon - Exact macOS Design -->
+      <div class="dock-item" data-app="calendar">
+        <svg class="dock-icon" viewBox="0 0 120 120" id="calendarIcon">
+          <rect width="120" height="120" rx="26" fill="white" />
+          <!-- Red header -->
+          <rect width="120" height="30" rx="26" fill="#FF3B30" />
+          <rect width="120" height="15" fill="#FF3B30" />
+          <!-- Date text -->
+          <text
+            x="60"
+            y="78"
+            text-anchor="middle"
+            font-size="42"
+            font-weight="300"
+            fill="black"
+            id="calendarDay"
+          >
+            1
+          </text>
+          <text
+            x="60"
+            y="98"
+            text-anchor="middle"
+            font-size="16"
+            font-weight="500"
+            fill="black"
+            id="calendarWeekday"
+          >
+            Monday
+          </text>
+        </svg>
+        <span class="dock-label">Calendar</span>
+      </div>
+
+      <!-- Settings Icon - Exact macOS Design -->
+      <div class="dock-item" data-app="settings">
+        <svg class="dock-icon" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient
+              id="settingsGrad"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" style="stop-color: #8e8e93" />
+              <stop offset="100%" style="stop-color: #636366" />
+            </linearGradient>
+          </defs>
+          <rect width="120" height="120" rx="26" fill="url(#settingsGrad)" />
+          <!-- Gear shape -->
+          <g transform="translate(60,60)">
+            <circle r="18" fill="#4A4A4E" />
+            <circle r="12" fill="white" opacity="0.3" />
+            <!-- Gear teeth -->
+            <rect x="-4" y="-32" width="8" height="12" rx="2" fill="#4A4A4E" />
+            <rect x="-4" y="20" width="8" height="12" rx="2" fill="#4A4A4E" />
+            <rect x="-32" y="-4" width="12" height="8" ry="2" fill="#4A4A4E" />
+            <rect x="20" y="-4" width="12" height="8" ry="2" fill="#4A4A4E" />
+            <g transform="rotate(45)">
+              <rect
+                x="-4"
+                y="-32"
+                width="8"
+                height="12"
+                rx="2"
+                fill="#4A4A4E"
+              />
+              <rect x="-4" y="20" width="8" height="12" rx="2" fill="#4A4A4E" />
+              <rect
+                x="-32"
+                y="-4"
+                width="12"
+                height="8"
+                ry="2"
+                fill="#4A4A4E"
+              />
+              <rect x="20" y="-4" width="12" height="8" ry="2" fill="#4A4A4E" />
+            </g>
+          </g>
+        </svg>
+        <span class="dock-label">Settings</span>
+      </div>
+
+      <!-- Calculator Icon - Exact macOS Design -->
+      <div class="dock-item" data-app="calculator">
+        <svg class="dock-icon" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="calcGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: #ff9f0a" />
+              <stop offset="100%" style="stop-color: #ff6b00" />
+            </linearGradient>
+          </defs>
+          <rect width="120" height="120" rx="26" fill="url(#calcGrad)" />
+          <!-- Display screen -->
+          <rect x="15" y="20" width="90" height="28" rx="4" fill="#2D2D2D" />
+          <text
+            x="98"
+            y="40"
+            text-anchor="end"
+            font-size="16"
+            font-weight="600"
+            fill="#FF9F0A"
+          >
+            123
+          </text>
+          <!-- Buttons -->
+          <g fill="#505050">
+            <circle cx="28" cy="65" r="8" />
+            <circle cx="50" cy="65" r="8" />
+            <circle cx="72" cy="65" r="8" />
+            <circle cx="94" cy="65" r="8" fill="#FF9F0A" />
+
+            <circle cx="28" cy="85" r="8" />
+            <circle cx="50" cy="85" r="8" />
+            <circle cx="72" cy="85" r="8" />
+            <circle cx="94" cy="85" r="8" fill="#FF9F0A" />
+
+            <circle cx="28" cy="105" r="8" />
+            <circle cx="50" cy="105" r="8" />
+            <circle cx="72" cy="105" r="8" />
+            <circle cx="94" cy="105" r="8" fill="#FF9F0A" />
+          </g>
+        </svg>
+        <span class="dock-label">Calculator</span>
+      </div>
+
+      <!-- Weather Icon -->
+      <div class="dock-item" data-app="weather">
+        <svg class="dock-icon" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="weatherGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: #4fc3f7" />
+              <stop offset="100%" style="stop-color: #0288d1" />
+            </linearGradient>
+          </defs>
+          <rect width="120" height="120" rx="26" fill="url(#weatherGrad)" />
+          <!-- Sun -->
+          <circle cx="55" cy="45" r="16" fill="#FFD54F" />
+          <line
+            x1="55"
+            y1="20"
+            x2="55"
+            y2="28"
+            stroke="#FFD54F"
+            stroke-width="3"
+            stroke-linecap="round"
+          />
+          <line
+            x1="80"
+            y1="45"
+            x2="72"
+            y2="45"
+            stroke="#FFD54F"
+            stroke-width="3"
+            stroke-linecap="round"
+          />
+          <line
+            x1="73"
+            y1="27"
+            x2="67"
+            y2="33"
+            stroke="#FFD54F"
+            stroke-width="3"
+            stroke-linecap="round"
+          />
+          <!-- Cloud -->
+          <path
+            d="M30 75 Q30 65 40 65 Q40 55 50 55 Q60 55 60 65 Q70 65 70 75 Q70 85 60 85 L40 85 Q30 85 30 75 Z"
+            fill="white"
+          />
+        </svg>
+        <span class="dock-label">Weather</span>
+      </div>
+
+      <div class="dock-separator"></div>
+
+      <!-- Trash Icon - Exact macOS Design -->
+      <div class="dock-item" data-app="trash">
+        <svg class="dock-icon" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="trashGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: #f0f0f0" />
+              <stop offset="100%" style="stop-color: #d0d0d0" />
+            </linearGradient>
+          </defs>
+          <rect width="120" height="120" rx="26" fill="url(#trashGrad)" />
+          <!-- Trash can body -->
+          <path
+            d="M35 45 L38 95 Q38 100 43 100 L77 100 Q82 100 82 95 L85 45 Z"
+            fill="white"
+            stroke="#999"
+            stroke-width="2"
+          />
+          <!-- Trash can lid -->
+          <rect
+            x="30"
+            y="40"
+            width="60"
+            height="6"
+            rx="2"
+            fill="white"
+            stroke="#999"
+            stroke-width="2"
+          />
+          <!-- Handle -->
+          <rect
+            x="48"
+            y="30"
+            width="24"
+            height="5"
+            rx="2"
+            fill="white"
+            stroke="#999"
+            stroke-width="2"
+          />
+          <!-- Vertical lines -->
+          <line
+            x1="50"
+            y1="52"
+            x2="48"
+            y2="88"
+            stroke="#999"
+            stroke-width="2"
+          />
+          <line
+            x1="60"
+            y1="52"
+            x2="60"
+            y2="88"
+            stroke="#999"
+            stroke-width="2"
+          />
+          <line
+            x1="70"
+            y1="52"
+            x2="72"
+            y2="88"
+            stroke="#999"
+            stroke-width="2"
+          />
+        </svg>
+        <span class="dock-label">Trash</span>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

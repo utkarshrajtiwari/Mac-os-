@@ -201,3 +201,83 @@ Boot / Loading screen
   z-index: 9998; /* Menu bar ke neeche */
   transition: opacity 0.1s ease;
 }
+
+/* 
+========================================
+   DOCK - Bottom bar like macOS
+======================================== 
+*/
+
+.dock {
+  position: fixed;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%); /* Exact center mein leke aao */
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blue(30px);
+  border-radius: 20px;
+  padding: 8px 12px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Dock Items */
+.dock-item {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Hover Effect - Icon jump karta hai! */
+.dock-item:hover {
+  transform: translateY(-12px) scale(1.2); /* uppar jump hoga aur scale ho jyega */
+}
+
+/* Icon size */
+.dock-icon {
+  width: 56px;
+  height: 56px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3)); /* Icon shadow */
+}
+
+/* Separator (Vertical Line) */
+.dock-separator {
+  width: 1px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 4px;
+}
+
+/* Label (Tooltip) */
+.dock-label {
+  position: absolute; /* Icon ke uppar floating */
+  bottom: 70px;
+  background: rgba(50, 50, 52, 0.95);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap; /* Text ek line mein rahe */
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hover pe lable dekhai de */
+.dock-item:hover .dock-label {
+  opacity: 1;
+}
+
+
+/* Dock item bounce animation */
+@keyframes dockBounce {
+    0%, 100% { transform: translateY(0); }      /* Start aur end - normal position */
+    25% { transform: translateY(-10px); }       /* Thoda upar */
+    50% { transform: translateY(-5px); }        /* Thoda neeche */
+    75% { transform: translateY(-8px); }        /* Fir thoda upar */
+}
+
+.dock-item.bounce {
+    animation: dockBounce 0.5s ease;            /* 0.5 second tak bounce */
+}

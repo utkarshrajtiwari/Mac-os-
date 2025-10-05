@@ -15,6 +15,7 @@ window.addEventListener("load", () => {
   }
   updateClock();
   setupBrightness();
+  setupDock();
 
   /* Clock regular update */
   setInterval(() => {
@@ -22,6 +23,7 @@ window.addEventListener("load", () => {
   }, 1000);
 });
 
+/* Clock */
 let updateClock = () => {
   const now = new Date(); // current date/time object
 
@@ -43,7 +45,6 @@ let updateClock = () => {
 };
 
 /* Brightness control Function */
-
 let setupBrightness = () => {
   const btn = document.querySelector(".brightness-control"); //brightness icon mai hai
   // try both spellings in case of typo in HTML
@@ -84,5 +85,26 @@ let setupBrightness = () => {
     const clamped = Math.max(0, Math.min(100, brightness));
     const darkness = (100 - clamped) / 100;
     overlay.style.opacity = darkness;
+  });
+};
+
+/* Dock setup */
+const setupDock = () => {
+  const items = document.querySelectorAll(".dock-item");
+  items.forEach((elem, index) => {
+    elem.addEventListener("click", (e) => {
+      const clickedItem = e.currentTarget;
+
+      // Bounce animation add karo
+      clickedItem.classList.add("bounce");
+
+      // 500ms baad bounce class remove karo
+      setTimeout(() => {
+        clickedItem.classList.remove("bounce");
+      }, 500);
+
+      // App open karo (abhi sirf console mein)
+      console.log("Opening:", clickedItem.dataset.app);
+    });
   });
 };
